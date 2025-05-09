@@ -32,7 +32,7 @@ Write the game “Start” script:
 
 ![](images/stage.png)
 
-```scratch3-high-contrast
+```blocks3-high-contrast
 when green flag clicked
 set [lives v] to (5)
 set [opponent tagged v] to (0)
@@ -53,7 +53,7 @@ Add a forever block to the bottom of the 'Start' script:
 
 ![](images/stage.png)
 
-```scratch3-high-contrast
+```blocks3-high-contrast
 when green flag clicked
 set [lives v] to (5)
 set [opponent tagged v] to (0)
@@ -72,7 +72,7 @@ Create the 'win' counter inside the forever loop. If the player tags all 7 clone
 
 ![](images/stage.png)
 
-```scratch3-high-contrast
+```blocks3-high-contrast
 forever
 +    if <(opponent tagged) = (7)> then
 +        broadcast [win v]
@@ -89,7 +89,7 @@ Create the 'lose' counter inside the forever loop:
 
 ![](images/stage.png)
 
-```scratch3-high-contrast
+```blocks3-high-contrast
 forever
     if <(opponent tagged) = (7)> then
         broadcast [win v]
@@ -110,7 +110,7 @@ Add the 'touch' counter to the forever loop. This tracks how many clones are tou
 
 ![](images/stage.png)
 
-```scratch3-high-contrast
+```blocks3-high-contrast
 forever
     if <(opponent tagged) = (7)> then
         broadcast [win v]

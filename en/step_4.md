@@ -23,7 +23,7 @@ Rename this sprite `opponent`.
 
 Add a setup script for the opponent:
 
-```scratch3-high-contrast
+```blocks3-high-contrast
 when I receive [start v]
 set size to (25)%
 set rotation style [left-right v]
@@ -44,7 +44,7 @@ Click the green flag and make sure the opponent hides and sizes correctly.
 
 Spawn 7 opponent clones when the game starts:
 
-```scratch3-high-contrast
+```blocks3-high-contrast
 
 when I receive [start v]
 set size to (25)%
@@ -67,7 +67,7 @@ Click the green flag: make sure that 7 clones are created.
 
 Add a clone start script that gives each clone a random look and location:
 
-```scratch3-high-contrast
+```blocks3-high-contrast
 +when I start as a clone
 +switch costume to (pick random (1) to (13)) // makes the clones look different
 +go to x:(pick random (-100) to (240)) y:(pick random (-180) to (180)) // makes sure that the clones start on the right side of the line
@@ -88,7 +88,7 @@ CLick the green flag and verify that clones spawn in different places and look d
 
 Add simple chase movement for clones:
 
-```scratch3-high-contrast
+```blocks3-high-contrast
 when I start as a clone
 switch costume to (pick random (1) to (13))
 go to x:(pick random (-100) to (240)) y:(pick random (-180) to (180))
