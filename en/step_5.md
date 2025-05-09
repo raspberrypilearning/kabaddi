@@ -8,7 +8,7 @@ In the Player sprite, detect when the player tags an opponent clone:
 ![](images/avery.png)
 
 
-```scratchblocks
+```scratch3-high-contrast
 when I receive [start v]
 set size to (25)%
 go to x:(-160) y:(0)
@@ -52,7 +52,7 @@ In the Opponent sprite (for each clone), detect when it touches the player:
 
 ![](images/opponent.png)
 
-```scratchblocks
+```scratch3-high-contrast
 when I start as a clone
 switch costume to (pick random (1) to (13))
 go to x:(pick random (-100) to (240)) y:(pick random (-180) to (180))
@@ -121,7 +121,7 @@ In the Stage sprite, handle the broadcast when a clone is tagged:
 
 ![](images/stage.png)
 
-```scratchblocks
+```scratch3-high-contrast
 +when I receive [tag opponent v]
 +change [opponent tagged v] by (1)
 ```
@@ -136,7 +136,7 @@ In the Stage sprite, handle the broadcast when the player is tagged:
 
 ![](images/stage.png)
 
-```scratchblocks
+```scratch3-high-contrast
 +when I receive [tag player v]
 +change [player tagged v] by (1)
 +change [lives v] by (-1)
@@ -158,7 +158,7 @@ Add the kabaddi timer loop in the Stage sprite:
 
 ![](images/stage.png)
 
-```scratchblocks
+```scratch3-high-contrast
 +when I receive [kabaddi v]
 +set [kabaddi v] to (1)
 +repeat until <(kabaddi) < (0)>

@@ -25,7 +25,7 @@ Stage the “start” handler for the player:
 
 ![](images/avery.png)
 
-```scratchblocks
+```scratch3-high-contrast
 when I receive [start v]
 set size to (25)%
 go to x:(-160) y:(0)
@@ -50,7 +50,7 @@ Add arrow-key movement:
 
 ![](images/avery.png)
 
-```scratchblocks
+```scratch3-high-contrast
 when I receive [start v]
 set size to (25)%
 go to x:(-160) y:(0)
@@ -89,7 +89,7 @@ Add Kabaddi-timer reset:
 
 ![](images/avery.png)
 
-```scratchblocks
+```scratch3-high-contrast
 when I receive [start v]
 set size to (25)%
 go to x:(-160) y:(0)
@@ -131,7 +131,7 @@ Add a `when I receive [tag player]` script to reset the player:
 
 ![](images/avery.png)
 
-```scratchblocks
+```scratch3-high-contrast
 +when I receive [tag player v]
 +go to x:(-160) y:(0)
 +play sound [pop v]
@@ -147,7 +147,7 @@ Add a `when I receive [win]` script:
 
 ![](images/avery.png)
 
-```scratchblocks
+```scratch3-high-contrast
 +when I receive [win v]
 +say [You win!] for (2) seconds
 +stop [all v]
@@ -163,7 +163,7 @@ Add a `when I receive [lose]` script:
 
 ![](images/avery.png)
 
-```scratchblocks
+```scratch3-high-contrast
 +when I receive [lose v]
 +say [You lose!] for (2) seconds
 +stop [all v]
