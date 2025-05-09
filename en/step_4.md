@@ -112,6 +112,3 @@ Click the green flag and confirm that clones chase the player and bounce at the 
 --- /task ---
 
 --- save ---
-
-```
-```
