@@ -85,7 +85,7 @@ CLick the green flag and verify that clones spawn in different places and look d
 
 --- task ---
 
-Add simple chase movement for clones:
+Add chase movement for clones:
 
 ```blocks3
 when I start as a clone
