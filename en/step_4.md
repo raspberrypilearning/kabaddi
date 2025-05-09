@@ -107,7 +107,7 @@ This makes each clone chase the player until the game ends.
 
 --- task ---
 
-Click the green flag and confirm that clones chase the player and bounce at the edges.
+Click the green flag and confirm that clones chase the player.
 
 --- /task ---
 
