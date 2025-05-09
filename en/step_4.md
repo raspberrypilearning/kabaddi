@@ -93,10 +93,10 @@ switch costume to (pick random (1) to (13))
 go to x:(pick random (-100) to (240)) y:(pick random (-180) to (180))
 show
 +repeat until <(lives) = (0)> // until the player runs out of lives
-+    point towards [Player v]
-+    turn right (pick random (-70) to (70)) degrees //turn slightly away from player to make movement more random
-+    move (2) steps // bigger number  = harder game
-+    if on edge, bounce
+    point towards [Player v]
+    turn right (pick random (-70) to (70)) degrees //turn slightly away from player to make movement more random
+    move (2) steps // bigger number  = harder game
+    if on edge, bounce
 +end
 +delete this clone
 ```
