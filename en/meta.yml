@@ -7,5 +7,9 @@ copyedit: false
 last_tested: "2025-01-01"
 steps:
   - title: What you will make
-  - title: Step title
+  - title: Stage setup
+  - title: Player mechanics
+  - title: Opponent mechanics
+  - title: Interactions and game logic
+  - title: Fine tune your game
   - title: What can you do now?

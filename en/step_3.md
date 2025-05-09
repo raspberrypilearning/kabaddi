@@ -1,18 +1,29 @@
 ## Player Mechanics
-Create the player, make it move with the keyboard, and add what happens if the player wins or loses.
+
+Create the player sprite, make it move with the keyboard, and add what happens if the player wins or loses.
 
 --- task ---
 
-**Import or draw the player**
+Import the player sprite from the sprite menu. Choose anything you like — in this example we will use the `Avery walking` sprite:
 
-Create or add a neutral-sized sprite for the player.  
-This provides the main controllable sprite for the player.
+![](images/sprite-choose.png)
+![](images/avery.png)
 
 --- /task ---
 
 --- task ---
 
-**Stage the “start” handler for the player**
+Rename this sprite `player`.
+
+![](images/rename-player.png)
+
+--- /task ---
+
+--- task ---
+
+Stage the “start” handler for the player:
+
+![](images/avery.png)
 
 ```scratchblocks
 when I receive [start v]
@@ -27,21 +38,37 @@ This ensures the player begins in the correct position and scale.
 
 --- task ---
 
-**Test player position and size**
+Test player position and size.
 
-Broadcast “start” and ensure correct placement and scaling.
+Click the green flag and ensure correct placement and scaling.
 
 --- /task ---
 
 --- task ---
 
-**Add arrow-key movement**
+Add arrow-key movement:
+
+![](images/avery.png)
 
 ```scratchblocks
-repeat until <(lives) = (0)>
-    if <key [up arrow] pressed?> then change y by (10) end
-    … (down/right/left) …
-end
+when I receive [start v]
+set size to (25)%
+go to x:(-160) y:(0)
+wait (1) seconds
++repeat until <(lives) = (0)>
++    if <key [up arrow] pressed?> then
++        change y by (10)
++    end
++    if <key [down arrow] pressed?> then
++        change y by (-10)
++    end
++    if <key [right arrow] pressed?> then
++        change x by (10)
++    end
++    if <key [left arrow] pressed?> then
++        change x by (-10)
++    end
++end
 ```
 
 This allows the player to move around the stage using the keyboard.
@@ -50,7 +77,7 @@ This allows the player to move around the stage using the keyboard.
 
 --- task ---
 
-**Test player movement**
+Test player movement
 
 Press arrow keys—verify movement is smooth and accurate.
 
@@ -58,22 +85,41 @@ Press arrow keys—verify movement is smooth and accurate.
 
 --- task ---
 
-**Add Kabaddi-timer reset**
+Add Kabaddi-timer reset:
+
+![](images/avery.png)
 
 ```scratchblocks
-if <key [space] pressed?> then
-    play sound [kabaddi v]
-    set [kabaddi v] to (1)
+when I receive [start v]
+set size to (25)%
+go to x:(-160) y:(0)
+wait (1) seconds
+repeat until <(lives) = (0)>
+    if <key [up arrow] pressed?> then
+        change y by (10)
+    end
+    if <key [down arrow] pressed?> then
+        change y by (-10)
+    end
+    if <key [right arrow] pressed?> then
+        change x by (10)
+    end
+    if <key [left arrow] pressed?> then
+        change x by (-10)
+    end
++    if <key [space v] pressed?> then
++       set [kabaddi v] to (1)
++    end
 end
 ```
 
-This resets the kabaddi countdown when the player calls out.
+This resets the kabaddi countdown when the player 'calls out' by pressing the space bar.
 
 --- /task ---
 
 --- task ---
 
-**Test spacebar and kabaddi reset**
+Test spacebar and kabaddi reset.
 
 Press or hold space—check that `kabaddi` resets to 1.
 
@@ -81,18 +127,57 @@ Press or hold space—check that `kabaddi` resets to 1.
 
 --- task ---
 
-**Add “when I receive” handlers** for `tag player`, `win`, and `lose`
+Add a `when I receive [tag player]` script to reset the player:
 
-Reset player, play sounds, show messages, and stop movement.  
-These events trigger key game outcomes and player responses.
+![](images/avery.png)
+
+```scratchblocks
++when I receive [tag player v]
++go to x:(-160) y:(0)
++play sound [pop v]
+```
+
+This moves the player back to the start when they’re tagged.
 
 --- /task ---
 
 --- task ---
 
-**Test player tag and endgame handlers**
+Add a `when I receive [win]` script:
 
-Manually broadcast each message to verify correct response.
+![](images/avery.png)
+
+```scratchblocks
++when I receive [win v]
++say [You win!] for (2) seconds
++stop [all v]
+```
+
+This shows a win message to the player and ends the game, if the win condition is met on the stage.
+
+--- /task ---
+
+--- task ---
+
+Add a `when I receive [lose]` script:
+
+![](images/avery.png)
+
+```scratchblocks
++when I receive [lose v]
++say [You lose!] for (2) seconds
++stop [all v]
+```
+
+This shows a loss message to the player and ends the game.
+
+--- /task ---
+
+--- task ---
+
+Test player tag and endgame handlers
+
+Manually broadcast each message to verify the sprite resets, messages appear, and the game ends. You can 
 
 --- /task ---
 
