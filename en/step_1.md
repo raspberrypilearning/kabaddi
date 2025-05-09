@@ -1,8 +1,6 @@
 ## What you will make
-OR
-## What you will do - change meta if you use this
 
-A brief description - one or two sentences. 
+Make a tag-style game inspired by kabaddi, where the player must cross a line, tag opponents, and return safely while managing a countdown timer by pressing the spacebar to "breathe"! 
 
 --- print-only ---
 ![ALT TEXT](images/IMAGE.png)
@@ -15,19 +13,6 @@ Editor embed
 --- /no-print ---
 
 --- no-print ---
-Video embed
-
-<video width="640" height="360" controls>
-<source src="images/videoname.mp4" type="video/mp4">
-</video>
-
-Youtube embed 
-<html>
-<div style="position: relative; overflow: hidden; padding-top: 56.25%;">
-<iframe style="position: absolute; top: 0; left: 0; right: 0; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/XXXXXXXXX?rel=0&cc_load_policy=1" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
-</iframe>
-</div><br>
-</html>
 
 Scratch embed
 <div class="scratch-preview">
@@ -35,8 +20,3 @@ Scratch embed
 </div>
 
 --- /no-print ---
-
-### You will need:
-- a
-- b
-- c

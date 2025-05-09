@@ -1,22 +1,99 @@
-## What can you do now?
+## Player Mechanics
+Create the player, make it move with the keyboard, and add what happens if the player wins or loses.
 
-If you are following the [PATH NAME](https://projects.raspberrypi.org/en/pathways/PATH-NAME) pathway, you can move on to the [NEXT PROJECT/PATH NAME](https://projects.raspberrypi.org/en/projects/PROJECT-SLUG) project. In this project, you will do DESCRIPTION.
+--- task ---
 
------- OR ---------
+**Import or draw the player**
 
-Try our [PROJECT/PATH NAME](https://projects.raspberrypi.org/en/collections/PATH-SLUG) project pathway where you will DESCRIPTION.
+Create or add a neutral-sized sprite for the player.  
+This provides the main controllable sprite for the player.
 
---- print-only --- 
+--- /task ---
 
-![ALT TEXT](images/IMAGE-FROM-PROJECT.png)
+--- task ---
 
---- /print-only ---
+**Stage the “start” handler for the player**
 
---- no-print ---
+```scratchblocks
+when I receive [start v]
+set size to (25)%
+go to x:(-160) y:(0)
+wait (1) seconds
+```
 
-<iframe src="https://editor.raspberrypi.org/en/embed/viewer/STARTER_PROJECT_SLUG" width="600" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
-</iframe>
+This ensures the player begins in the correct position and scale.
 
---- /no-print ---
+--- /task ---
 
-Or, why not try out another [CODING_LANGUAGE](https://projects.raspberrypi.org/en/projects?software%5B%5D=CODING_LANGUAGE) project.
+--- task ---
+
+**Test player position and size**
+
+Broadcast “start” and ensure correct placement and scaling.
+
+--- /task ---
+
+--- task ---
+
+**Add arrow-key movement**
+
+```scratchblocks
+repeat until <(lives) = (0)>
+    if <key [up arrow] pressed?> then change y by (10) end
+    … (down/right/left) …
+end
+```
+
+This allows the player to move around the stage using the keyboard.
+
+--- /task ---
+
+--- task ---
+
+**Test player movement**
+
+Press arrow keys—verify movement is smooth and accurate.
+
+--- /task ---
+
+--- task ---
+
+**Add Kabaddi-timer reset**
+
+```scratchblocks
+if <key [space] pressed?> then
+    play sound [kabaddi v]
+    set [kabaddi v] to (1)
+end
+```
+
+This resets the kabaddi countdown when the player calls out.
+
+--- /task ---
+
+--- task ---
+
+**Test spacebar and kabaddi reset**
+
+Press or hold space—check that `kabaddi` resets to 1.
+
+--- /task ---
+
+--- task ---
+
+**Add “when I receive” handlers** for `tag player`, `win`, and `lose`
+
+Reset player, play sounds, show messages, and stop movement.  
+These events trigger key game outcomes and player responses.
+
+--- /task ---
+
+--- task ---
+
+**Test player tag and endgame handlers**
+
+Manually broadcast each message to verify correct response.
+
+--- /task ---
+
+--- save ---
