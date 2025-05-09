@@ -1,4 +1,3 @@
-````markdown
 ## Opponent Mechanics  
 Make opponent clones that appear in random places and follow the player.
 
