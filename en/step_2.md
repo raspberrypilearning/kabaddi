@@ -57,7 +57,7 @@ Tagging 7 opponents means you win. Add this code to the bottom of your script:
 ```blocks3
 when green flag clicked
 set [lives v] to (5)
-set [opponent tagged v] to (0)
+set [opponent tagged v] to (0) //THESE NEED TO BE MOVED TO THE RELEVANT STEPS, NOT ADDED IN BULK HERE
 set [player tagged v] to (0)
 set [touching v] to (0)
 broadcast [start v]
@@ -74,7 +74,9 @@ broadcast [kabaddi v]
 
 --- task ---
 
-Add the code for running out of lives:
+Add the code for running out of lives. 
+
+In this example, the player has 5 lives when the game starts:
 
 ```blocks3
 when green flag clicked
