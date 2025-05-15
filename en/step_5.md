@@ -143,7 +143,7 @@ broadcast [tag player v]
 broadcast [kabaddi v]
 ```
 
-Players must press space regularly to reset their timer, or they'll lose a life.
+Players must press space regularly to reset their timer, or they'll get 'tagged' and lose a life.
 
 --- /task ---
 
