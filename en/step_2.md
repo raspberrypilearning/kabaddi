@@ -42,7 +42,7 @@ broadcast [kabaddi v]
 
 This prepares the game state and triggers the start and countdown broadcasts. 
 
-FIrst, it gives the player 5 lives and resets all the variables to 0. Then, it sends two broadcasts out - one which starts all the other sprites, and one which will eventually start a timer to make sure the player is 'saying kabaddi' while playing.
+First, it gives the player 5 lives and resets all the variables to 0. Then, it sends two broadcasts out - one which starts all the other sprites, and one which will eventually start a timer to make sure the player is 'saying kabaddi' while playing.
 
 --- /task ---
 
