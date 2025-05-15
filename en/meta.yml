@@ -8,8 +8,8 @@ last_tested: "2025-01-01"
 steps:
   - title: What you will make
   - title: Stage setup
-  - title: Player mechanics
-  - title: Opponent mechanics
-  - title: Interactions and game logic
-  - title: Challenge
+  - title: Player setup and controls
+  - title: Add opponents
+  - title: Game interactions
+  - title: Challenge!
   - title: What can you do now?

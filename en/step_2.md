@@ -4,13 +4,11 @@ Set up the game by drawing the green line and making all the variables you will 
 
 --- task ---
 
-Paint the “green line”.
-
-In the Backdrops editor, draw a vertical green line at x = –100. It should be 20 pixels thick.
+Paint the “green line”. This sets a safe zone for the player.
 
 ![](images/backdrop_menu_paint.png)
 
-This sets a safe zone for the player.
+In the **Backdrops** editor, draw a vertical green line at x = –100. It should be 20 pixels thick.
 
 ![](images/backdrop_editor.png)
 
