@@ -9,7 +9,7 @@ Make a tag-style game inspired by [kabaddi](https://en.wikipedia.org/wiki/Kabadd
 --- no-print ---
 
 <div class="scratch-preview">
- <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/XXXXXXXXX/?autostart=false" frameborder="0"></iframe>
+ <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/1175744884/?autostart=false" frameborder="0"></iframe>
 </div>
 
 --- /no-print ---
