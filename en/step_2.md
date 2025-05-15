@@ -46,6 +46,64 @@ First, it gives the player 5 lives and resets all the variables to 0. Then, it s
 
 --- /task ---
 
+Add the counters for both `lives`{:class='block3variables'} and `opponent tagged`{:class='block3variables'}, as these are the two variables that control winning and losing the game.
+
+--- task ---
+
+Tagging 7 opponents means you win. Add this code to the bottom of your script:
+
+![](images/stage.png)
+
+```blocks3
+when green flag clicked
+set [lives v] to (5)
+set [opponent tagged v] to (0)
+set [player tagged v] to (0)
+set [touching v] to (0)
+broadcast [start v]
+broadcast [kabaddi v]
++forever
++if <(opponent tagged) = (7)> then
+    broadcast [win v]
+    wait (3) seconds
++end
++end
+```
+
+--- /task ---
+
+--- task ---
+
+Add the code for running out of lives:
+
+```blocks3
+when green flag clicked
+set [lives v] to (5)
+set [opponent tagged v] to (0)
+set [player tagged v] to (0)
+set [touching v] to (0)
+broadcast [start v]
+broadcast [kabaddi v]
+forever
+if <(opponent tagged) = (7)> then
+    broadcast [win v]
+    wait (3) seconds
+end
++if <(lives) = (0)> then
+    broadcast [lose v]
+    wait (3) seconds
++end
+end
+```
+
+--- /task ---
+
+--- task ---
+
+**Test your code.** Click the 
+
+--- /task ---
+
 In the next step, make the controls for your player!
 
 --- save ---

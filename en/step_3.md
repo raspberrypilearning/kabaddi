@@ -63,6 +63,30 @@ This allows the player to move around the stage using the keyboard.
 
 --- /task ---
 
+--- task ---
+
+Add the code now that will stop the game if the player wins or loses:
+
+![](images/avery.png)
+
+```blocks3
+when I receive [lose v]
+say [TRY AGAIN!] for (2) seconds
+stop [all v]
+
+when I receive [win v]
+say [YOU WIN!] for (2) seconds
+stop [all v]
+```
+
+--- /task ---
+
+--- task ---
+
+**Test your code.** Click the green flag nand make sure you can control the player sprite.
+
+--- /task ---
+
 In the next step, make opponents who will chase the player!
 
 --- save ---
