@@ -99,10 +99,29 @@ Add this code to the player, to simulate saying 'kabaddi' by pressing `space`:
 ![](images/avery.png)
 
 ```blocks3
+when I receive [start v]
+set size to (25)%
+go to x:(-160) y:(0)
+wait (1) seconds
 repeat until <(lives) = (0)>
-    if <key [space v] pressed?> then
-        set [kabaddi v] to (1)
+    if <key [up arrow] pressed?> then
+        change y by (10)
     end
+    if <key [down arrow] pressed?> then
+        change y by (-10)
+    end
+    if <key [right arrow] pressed?> then
+        change x by (10)
+    end
+    if <key [left arrow] pressed?> then
+        change x by (-10)
+    end
+    if <touching [Opponent v]?> then
+        broadcast [tag opponent v]
+    end
++    if <key [space v] pressed?> then
+        set [kabaddi v] to (1)
++    end
 end
 ```
 --- /task ---
