@@ -34,7 +34,7 @@ end
 
 --- /task ---
 
-The rules of Kabaddi says that the player must tag opponents, but not get caught themselves. In our game, we will say that if more than one opponent is touching the player, they get caught.
+The rules of Kabaddi says that the player must tag opponents, but not get caught themselves. In this game; if more than one opponent is touching the player, they get caught.
 
 --- task ---
 
