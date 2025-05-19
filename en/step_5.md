@@ -34,9 +34,9 @@ repeat until <(lives) = (0)>
     if <key [left arrow] pressed?> then
         change x by (-10)
     end
-    if <touching [Opponent v]?> then
++    if <touching [Opponent v]?> then
         broadcast [tag opponent v]
-    end
++    end
 end
 ````
 
@@ -113,7 +113,7 @@ Create a new `broadcast`{:class='block3events'} called `tag player`.
 
 --- task ---
 
-Add this code to the start script on the **Stage**, to make sure the variable is `0` when the game starts, and that if more than one opponent is touching the player (`touching > 1`) then they get 'tagged' and lose a life.
+Add this code to the start script on the **Stage**, to make sure the `touching`{:class='block3variables'}variable is `0` when the game starts, and that if more than one opponent is touching the player (`touching > 1`) then they get 'tagged' and lose a life.
 
 ![](images/stage.png)
 
@@ -121,7 +121,7 @@ Add this code to the start script on the **Stage**, to make sure the variable is
 when green flag clicked
 set [lives v] to (5)
 set [opponent tagged v] to (0)
-set [touching v] to (0)
++set [touching v] to (0)
 broadcast [start v]
 forever
     if <(opponent tagged) = (7)> then
@@ -132,11 +132,11 @@ forever
         broadcast [lose v]
         wait (3) seconds
     end
-    if <(touching) > (1)> then
++    if <(touching) > (1)> then
         broadcast [tag player v]
         set [touching v] to (0)
         wait (1) seconds
-    end
++    end
 end
 ```
 

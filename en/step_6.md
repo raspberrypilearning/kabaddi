@@ -4,7 +4,7 @@ In the rules of Kabaddi, the player has to keep repeating the word 'Kabaddi' ove
 
 --- task ---
 
-Create a new `variable` called `kabaddi`. We will use this as a timer to make sure the player presses the 'kabaddi' button (space bar) every so often, just like having to say 'Kabaddi!' while you play.
+Create a new `variable`{:class='block3variables'} called `kabaddi`. We will use this as a timer to make sure the player presses the 'kabaddi' button (space bar) every so often, just like having to say 'Kabaddi!' while you play.
 
 --- /task ---
 
@@ -35,7 +35,7 @@ repeat until <(lives) = (0)>
     if <touching [Opponent v]?> then
         broadcast [tag opponent v]
     end
-    if <key [space v] pressed?> then
++    if <key [space v] pressed?> then
         set [kabaddi v] to (1)
     end
 end
@@ -45,7 +45,7 @@ end
 
 --- task ---
 
-On the **Stage**, add this block to your start script to make sure our Kabaddi timer starts counting when the game starts:
+On the **Stage**, add this `broadcast`{:class='block3events'} to your start script, to make sure our Kabaddi timer starts counting when the game starts:
 
 ```blocks3
 when green flag clicked
@@ -53,7 +53,7 @@ set [lives v] to (5)
 set [opponent tagged v] to (0)
 set [touching v] to (0)
 broadcast [start v]
-broadcast [kabaddi v]
++broadcast [kabaddi v]
 forever
     if <(opponent tagged) = (7)> then
         broadcast [win v]
@@ -85,7 +85,7 @@ broadcast [tag player v]
 broadcast [kabaddi v]
 ```
 
-Players must press space regularly (every second) to reset their timer, or they'll get 'tagged' and lose a life.
+Players must press space regularly (every second) to reset their timer, or they'll get 'tagged' and lose a life. The timer then starts itself again with the `broadcast`{:class='block3events'}.
 
 --- /task ---
 

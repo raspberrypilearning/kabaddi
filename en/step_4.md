@@ -7,6 +7,7 @@ Make opponents appear and chase the player.
 Import an opponent sprite. In this example, we use the `Character 1` sprite:
 
 ![](images/sprite-choose.png)  
+
 ![](images/opponent.png)
 
 Rename this sprite to `opponent`.
