@@ -16,11 +16,11 @@ In the **Backdrops** editor, draw a vertical green line at x = –100. It should
 
 --- task ---
 
-Create five variables: `lives`{:class='block3variables'} , `opponent tagged`{:class='block3variables'}, `player tagged`{:class='block3variables'}, `touching`{:class='block3variables'}, and `kabaddi`{:class='block3variables'}. 
+Create two variables: `lives`{:class='block3variables'} an `opponent tagged`{:class='block3variables'}
 
 ![](images/variables.png)
 
-These variables will control game state, collisions, and scoring.
+These variables will control scoring, and tell the game if the player has won or lost.
 
 --- /task ---
 
@@ -34,15 +34,22 @@ Write the game “Start” script:
 when green flag clicked
 set [lives v] to (5)
 set [opponent tagged v] to (0)
-set [player tagged v] to (0)
-set [touching v] to (0)
-broadcast [start v]
-broadcast [kabaddi v]
 ```
 
-This prepares the game state and triggers the start and countdown broadcasts. 
+--- /task ---
 
-First, it gives the player 5 lives and resets all the variables to 0. Then, it sends two broadcasts out - one which starts all the other sprites, and one which will eventually start a timer to make sure the player is 'saying kabaddi' while playing.
+--- task ---
+
+Create a new `broadcast`{:class='block3events'} called `start`, and add the broadcast block to the bottom of your script:
+
+```blocks3
+when green flag clicked
+set [lives v] to (5)
+set [opponent tagged v] to (0)
++broadcast [start v]
+```
+
+This is the message we will use to start all the other sprites in the game.
 
 --- /task ---
 
@@ -57,11 +64,8 @@ Tagging 7 opponents means you win. Add this code to the bottom of your script:
 ```blocks3
 when green flag clicked
 set [lives v] to (5)
-set [opponent tagged v] to (0) //THESE NEED TO BE MOVED TO THE RELEVANT STEPS, NOT ADDED IN BULK HERE
-set [player tagged v] to (0)
-set [touching v] to (0)
+set [opponent tagged v] to (0)
 broadcast [start v]
-broadcast [kabaddi v]
 +forever
 +if <(opponent tagged) = (7)> then
     broadcast [win v]
@@ -82,10 +86,7 @@ In this example, the player has 5 lives when the game starts:
 when green flag clicked
 set [lives v] to (5)
 set [opponent tagged v] to (0)
-set [player tagged v] to (0)
-set [touching v] to (0)
 broadcast [start v]
-broadcast [kabaddi v]
 forever
 if <(opponent tagged) = (7)> then
     broadcast [win v]
@@ -97,12 +98,6 @@ end
 +end
 end
 ```
-
---- /task ---
-
---- task ---
-
-**Test your code.** Click the 
 
 --- /task ---
 
