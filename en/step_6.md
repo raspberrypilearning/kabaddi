@@ -1,4 +1,3 @@
-````markdown
 ## Make the Kabaddi timer
 
 In the rules of Kabaddi, the player has to keep repeating the word 'Kabaddi' over and over to show they aren't taking another breath. We're going to simulate that by needing the player to press space every second, or lose a life. 
@@ -40,7 +39,7 @@ repeat until <(lives) = (0)>
         set [kabaddi v] to (1)
     end
 end
-````
+```
 
 --- /task ---
 

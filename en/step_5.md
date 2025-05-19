@@ -1,4 +1,3 @@
-````markdown
 ## Tagging and being caught
 
 Make the tagging and scoring work, and add the Kabaddi timer.
