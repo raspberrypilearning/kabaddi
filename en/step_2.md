@@ -16,7 +16,7 @@ In the **Backdrops** editor, draw a vertical green line at x = –100. It should
 
 --- task ---
 
-Create two variables: `lives`{:class='block3variables'} an `opponent tagged`{:class='block3variables'}
+Create two variables: `lives`{:class='block3variables'} and `opponent tagged`{:class='block3variables'}
 
 ![](images/variables.png)
 
