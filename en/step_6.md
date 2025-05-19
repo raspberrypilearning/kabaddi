@@ -63,6 +63,11 @@ forever
         broadcast [lose v]
         wait (3) seconds
     end
+    if <(touching) > (1)> then
+        broadcast [tag player v]
+        set [touching v] to (0)
+        wait (1) seconds
+    end
 end
 ```
 
