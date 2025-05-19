@@ -4,10 +4,10 @@ Upgrade your project and make it extra cool!
 
 --- task ---
 
-Add sounds for:
+Add effect sounds{:class='block3sounds'} for:
  - winning 
  - losing
- - saying 'Kabaddi!' when space is pressed 
+ - saying 'Kabaddi!' when space is pressed (you could record yourself saying it!)
  - tagging an opponent
  - being tagged
  - game start
@@ -16,7 +16,7 @@ Add sounds for:
 
 --- task ---
 
-Add looks blocks to create a walking animation for the player sprite.
+Add looks{:class='block3looks'} blocks to create a walking animation for the player sprite.
 
 --- /task ---
 
