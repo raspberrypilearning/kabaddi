@@ -67,10 +67,10 @@ set [lives v] to (5)
 set [opponent tagged v] to (0)
 broadcast [start v]
 +forever
-+if <(opponent tagged) = (7)> then
+if <(opponent tagged) = (7)> then
     broadcast [win v]
     wait (3) seconds
-+end
+end
 +end
 ```
 
