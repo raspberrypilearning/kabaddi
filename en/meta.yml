@@ -10,6 +10,7 @@ steps:
   - title: Stage setup
   - title: Player setup and controls
   - title: Add opponents
-  - title: Game interactions
+  - title: Tagging and being caught
+  - title: Make the Kabaddi timer
   - title: Challenge!
   - title: What can you do now?
