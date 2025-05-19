@@ -1,3 +1,4 @@
+````markdown
 ## Tagging and being caught
 
 Make the tagging and scoring work, and add the Kabaddi timer.
@@ -34,11 +35,11 @@ repeat until <(lives) = (0)>
     if <key [left arrow] pressed?> then
         change x by (-10)
     end
-+    if <touching [Opponent v]?> then
+    if <touching [Opponent v]?> then
         broadcast [tag opponent v]
-+    end
+    end
 end
-```
+````
 
 --- /task ---
 
@@ -51,7 +52,7 @@ On the **Opponent** sprite, add this new code to remove opponents who get tagged
 ```blocks3
 when I receive [tag opponent v]
 if <touching [player v]> then
-delete this clone 
+    delete this clone
 end
 ```
 
@@ -66,7 +67,6 @@ The Stage handles the scoring in our game. Add these blocks to the **Stage**:
 ```blocks3
 when I receive [tag opponent v]
 change [opponent tagged v] by (1)
-
 ```
 
 --- /task ---
@@ -79,7 +79,7 @@ change [opponent tagged v] by (1)
 
 ### Being tagged
 
-The rules of Kabaddi say that the player must tag opponents, but not get caught themselves. In this game; if more than one opponent is touching the player, they get caught. We need to make a way of telling of more than one opponent is touching the player.
+The rules of Kabaddi say that the player must tag opponents, but not get caught themselves. In this game, if more than one opponent is touching the player, they get caught. We need to make a way of telling if more than one opponent is touching the player.
 
 --- task ---
 
@@ -114,7 +114,7 @@ Create a new `broadcast`{:class='block3events'} called `tag player`.
 
 --- task ---
 
-Add this code to the start script on the **Stage**, to make sure the variable is `0` when the game starts, and that if more than one opponent is touching the player (`touching > 1`) then they get 'tagged' and lose a life. 
+Add this code to the start script on the **Stage**, to make sure the variable is `0` when the game starts, and that if more than one opponent is touching the player (`touching > 1`) then they get 'tagged' and lose a life.
 
 ![](images/stage.png)
 
@@ -122,27 +122,28 @@ Add this code to the start script on the **Stage**, to make sure the variable is
 when green flag clicked
 set [lives v] to (5)
 set [opponent tagged v] to (0)
-+set [touching v] to (0)
+set [touching v] to (0)
 broadcast [start v]
 forever
-if <(opponent tagged) = (7)> then
-    broadcast [win v]
-    wait (3) seconds
+    if <(opponent tagged) = (7)> then
+        broadcast [win v]
+        wait (3) seconds
+    end
+    if <(lives) = (0)> then
+        broadcast [lose v]
+        wait (3) seconds
+    end
+    if <(touching) > (1)> then
+        broadcast [tag player v]
+        set [touching v] to (0)
+        wait (1) seconds
+    end
 end
-if <(lives) = (0)> then
-    broadcast [lose v]
-    wait (3) seconds
-end
-+if <(touching) > (1)> then
-    broadcast [tag player v]
-    set [touching v] to (0)
-    wait (1) seconds
-+end
 ```
 
 --- /task ---
 
-Now, if more than one opponent touches the player, they need to lose a life and go back across the line. 
+Now, if more than one opponent touches the player, they need to lose a life and go back across the line.
 
 --- task ---
 
@@ -167,3 +168,4 @@ change [lives v] by (-1)
 In the next step, make the player 'say kabaddi' using a key press!
 
 --- save ---
+

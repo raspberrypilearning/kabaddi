@@ -1,4 +1,4 @@
-
+````markdown
 ## Make the Kabaddi timer
 
 In the rules of Kabaddi, the player has to keep repeating the word 'Kabaddi' over and over to show they aren't taking another breath. We're going to simulate that by needing the player to press space every second, or lose a life. 
@@ -36,16 +36,17 @@ repeat until <(lives) = (0)>
     if <touching [Opponent v]?> then
         broadcast [tag opponent v]
     end
-+    if <key [space v] pressed?> then
+    if <key [space v] pressed?> then
         set [kabaddi v] to (1)
-+    end
+    end
 end
-```
+````
+
 --- /task ---
 
 --- task ---
 
-On the **Stage**, add this block to your start script to make sure out Kabaddi timer starts counting when the game starts:
+On the **Stage**, add this block to your start script to make sure our Kabaddi timer starts counting when the game starts:
 
 ```blocks3
 when green flag clicked
@@ -53,16 +54,16 @@ set [lives v] to (5)
 set [opponent tagged v] to (0)
 set [touching v] to (0)
 broadcast [start v]
-+broadcast [kabaddi v]
+broadcast [kabaddi v]
 forever
-if <(opponent tagged) = (7)> then
-    broadcast [win v]
-    wait (3) seconds
-end
-if <(lives) = (0)> then
-    broadcast [lose v]
-    wait (3) seconds
-end
+    if <(opponent tagged) = (7)> then
+        broadcast [win v]
+        wait (3) seconds
+    end
+    if <(lives) = (0)> then
+        broadcast [lose v]
+        wait (3) seconds
+    end
 end
 ```
 
@@ -94,3 +95,6 @@ Players must press space regularly (every second) to reset their timer, or they'
 **Test your code.** Click the green flag, and make sure the Kabaddi timer is working, and resets when you press the space bar.
 
 --- /task ---
+
+```
+```

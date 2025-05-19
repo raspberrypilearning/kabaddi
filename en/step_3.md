@@ -83,7 +83,7 @@ stop [all v]
 
 --- task ---
 
-**Test your code.** Click the green flag nand make sure you can control the player sprite.
+**Test your code.** Click the green flag and make sure you can control the player sprite.
 
 --- /task ---
 

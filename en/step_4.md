@@ -9,7 +9,7 @@ Import an opponent sprite. In this example, we use the `Character 1` sprite:
 ![](images/sprite-choose.png)  
 ![](images/opponent.png)
 
-Rename this sprite `opponent`.
+Rename this sprite to `opponent`.
 
 ![](images/rename-opponent.png)
 
@@ -29,7 +29,7 @@ hide
 repeat (7)
     create clone of [myself v]
 end
-```
+````
 
 This prepares the base sprite to clone without showing it.
 
@@ -59,6 +59,6 @@ Each clone will chase the player.
 
 --- /task ---
 
-In the next step, have the opponents catch the player, and the player tag opponents!
+In the next step, have the opponents catch the player, and the player tag the opponents!
 
 --- save ---
