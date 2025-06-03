@@ -57,6 +57,12 @@ Add the counters for both `lives`{:class='block3variables'} and `opponent tagged
 
 --- task ---
 
+Create two new `broadcast`{:class='block3events'} messages called `win` and `lose`.
+
+--- /task ---
+
+--- task ---
+
 Tagging 7 opponents means you win. Add this code to the bottom of your script:
 
 ![](images/stage.png)
