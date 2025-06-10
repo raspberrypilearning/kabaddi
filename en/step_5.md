@@ -1,6 +1,6 @@
 ## Tagging and being caught
 
-Make the tagging and scoring work, and add the Kabaddi timer.
+Make the tagging and scoring work.
 
 ### Tagging opponents
 
@@ -14,7 +14,7 @@ Create a new `broadcast`{:class='block3events'} which says `tag opponent`. This 
 
 Add this code to the **Player** sprite, so it registers if the player tags an opponent:
 
-![](images/avery.png)
+![Sprite of a person walking, labelled “player”.](images/avery.png)
 
 ```blocks3
 when I receive [start v]
@@ -22,23 +22,23 @@ set size to (25)%
 go to x:(-160) y:(0)
 wait (1) seconds
 repeat until <(lives) = (0)>
-    if <key [up arrow] pressed?> then
+    if <key (up arrow v) pressed?> then 
         change y by (10)
     end
-    if <key [down arrow] pressed?> then
+    if <key (down arrow v) pressed?> then 
         change y by (-10)
     end
-    if <key [right arrow] pressed?> then
+    if <key (right arrow v) pressed?> then 
         change x by (10)
     end
-    if <key [left arrow] pressed?> then
+    if <key (left arrow v) pressed?> then 
         change x by (-10)
     end
-+    if <touching [Opponent v]?> then
-        broadcast [tag opponent v]
++    if <touching (Opponent v)?> then
+        broadcast (tag opponent v)
 +    end
 end
-````
+```
 
 --- /task ---
 
@@ -46,11 +46,11 @@ end
 
 On the **Opponent** sprite, add this new code to remove opponents who get tagged:
 
-![](images/opponent.png)
+![Sprite of a person in a wheelchair, labelled “opponent”](images/opponent.png)
 
 ```blocks3
-when I receive [tag opponent v]
-if <touching [player v]> then
+when I receive (tag opponent v)
+if <touching (player v)> then
     delete this clone
 end
 ```
@@ -61,10 +61,10 @@ end
 
 The Stage handles the scoring in our game. Add these blocks to the **Stage**:
 
-![](images/stage.png)
+![Stage with a centred vertical green line.](images/stage.png)
 
 ```blocks3
-when I receive [tag opponent v]
+when I receive (tag opponent v)
 change [opponent tagged v] by (1)
 ```
 
@@ -90,14 +90,14 @@ On the **Stage**, make a new `variable`{:class='block3variables'} called `touchi
 
 Add this code to the **Opponent** sprite, so the game is checking if more than one opponent is touching the player:
 
-![](images/opponent.png)
+![Sprite of a person in a wheelchair, labelled “opponent”](images/opponent.png)
 
 ```blocks3
 when I start as a clone
 repeat until <(lives) = (0)>
-    if <touching [Player v]?> then
+    if <touching (Player v)?> then
         change [touching v] by (1)
-        wait until <not <touching [Player v]?>>
+        wait until <not <touching (Player v)?>>
         change [touching v] by (-1)
     end
 end
@@ -115,25 +115,25 @@ Create a new `broadcast`{:class='block3events'} called `tag player`.
 
 Add this code to the start script on the **Stage**, to make sure the `touching`{:class='block3variables'}variable is `0` when the game starts, and that if more than one opponent is touching the player (`touching > 1`) then they get 'tagged' and lose a life.
 
-![](images/stage.png)
+![Stage with a centred vertical green line.](images/stage.png)
 
 ```blocks3
 when green flag clicked
 set [lives v] to (5)
 set [opponent tagged v] to (0)
 +set [touching v] to (0)
-broadcast [start v]
+broadcast (start v)
 forever
     if <(opponent tagged) = (7)> then
-        broadcast [win v]
+        broadcast (win v)
         wait (3) seconds
     end
     if <(lives) = (0)> then
-        broadcast [lose v]
+        broadcast (lose v)
         wait (3) seconds
     end
 +    if <(touching) > (1)> then
-        broadcast [tag player v]
+        broadcast (tag player v)
         set [touching v] to (0)
         wait (1) seconds
 +    end
@@ -148,10 +148,10 @@ Now, if more than one opponent touches the player, they need to lose a life and 
 
 Add this code to the **Player** now, so it can react properly if tagged:
 
-![](images/avery.png)
+![Sprite of a person walking, labelled “player”.](images/avery.png)
 
 ```blocks3
-when I receive [tag player v]
+when I receive (tag player v)
 go to x:(-160) y:(0)
 change [lives v] by (-1)
 ```

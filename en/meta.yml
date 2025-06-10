@@ -8,9 +8,13 @@ last_tested: "2025-01-01"
 steps:
   - title: What you will make
   - title: Stage setup
+    completion: engaged
   - title: Player setup and controls
   - title: Add opponents
   - title: Tagging and being caught
+    completion: internal
   - title: Make the Kabaddi timer
   - title: Challenge!
+    challenge: true
   - title: What can you do now?
+    completion: external

@@ -4,14 +4,22 @@ Add the player sprite and make it move around.
 
 --- task ---
 
-Import the player sprite from the sprite menu. Choose anything you like — in this example we will use the `Avery walking` sprite:
+Delete `Sprite1` by clicking on the bin icon on the thumbnail:
 
-![](images/sprite-choose.png)
-![](images/avery.png)
+/[Scratch cat sprite thumbnail labelled “Sprite1” with a delete icon.](images/scratch-thumbnail.png)
 
-Rename this sprite `player`.
+--- /task ---
 
-![](images/rename-player.png)
+--- task ---
+
+Import the Player sprite from the sprite menu. Choose anything you like — in this example we will use the `Avery walking` sprite:
+
+![Sidebar menu with “Choose a Sprite” highlighted.](images/sprite-choose.png)
+![Sprite of a person walking, labelled “player”.](images/avery.png)
+
+Rename this sprite `Player`.
+
+![Sprite label set to “Player”.](images/rename-player.png)
 
 --- /task ---
 
@@ -19,7 +27,7 @@ Rename this sprite `player`.
 
 Stage the “start” handler for the player:
 
-![](images/avery.png)
+![Sprite of a person walking, labelled “player”.](images/avery.png)
 
 ```blocks3
 when I receive [start v]
@@ -36,7 +44,7 @@ This ensures the player begins in the correct position and scale.
 
 Add arrow-key movement:
 
-![](images/avery.png)
+![Sprite of a person walking, labelled “player”.](images/avery.png)
 
 ```blocks3
 when I receive [start v]
@@ -44,22 +52,22 @@ set size to (25)%
 go to x:(-160) y:(0)
 wait (1) seconds
 repeat until <(lives) = (0)>
-    if <key [up arrow] pressed?> then
+    if <key (up arrow v) pressed?> then // allows player to move up
         change y by (10)
     end
-    if <key [down arrow] pressed?> then
+    if <key (down arrow v) pressed?> then // allows player to move down
         change y by (-10)
     end
-    if <key [right arrow] pressed?> then
+    if <key (right arrow v) pressed?> then // allows player to move right
         change x by (10)
     end
-    if <key [left arrow] pressed?> then
+    if <key (left arrow v) pressed?> then // allows player to move left
         change x by (-10)
     end
 end
 ```
 
-This allows the player to move around the stage using the keyboard.
+
 
 --- /task ---
 
@@ -67,14 +75,14 @@ This allows the player to move around the stage using the keyboard.
 
 Add the code now that will stop the game if the player wins or loses:
 
-![](images/avery.png)
+![Sprite of a person walking, labelled “player”.](images/avery.png)
 
 ```blocks3
-when I receive [lose v]
+when I receive (lose v)
 say [TRY AGAIN!] for (2) seconds
 stop [all v]
 
-when I receive [win v]
+when I receive (win v)
 say [YOU WIN!] for (2) seconds
 stop [all v]
 ```
