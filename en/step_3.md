@@ -6,7 +6,7 @@ Add the player sprite and make it move around.
 
 Delete `Sprite1` by clicking on the bin icon on the thumbnail:
 
-/[Scratch cat sprite thumbnail labelled “Sprite1” with a delete icon.](images/scratch-thumbnail.png)
+[Scratch cat sprite thumbnail labelled “Sprite1” with a delete icon.](images/scratch-thumbnail.png)
 
 --- /task ---
 
