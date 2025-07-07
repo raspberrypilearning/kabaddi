@@ -25,7 +25,7 @@ Rename this sprite `Player`.
 
 --- task ---
 
-Stage the “start” handler for the player:
+Create the “start” script for the player:
 
 ![Sprite of a person walking, labelled “player”.](images/avery.png)
 
@@ -51,7 +51,7 @@ when I receive [start v]
 set size to (25)%
 go to x:(-160) y:(0)
 wait (1) seconds
-repeat until <(lives) = (0)>
++repeat until <(lives) = (0)>
     if <key (up arrow v) pressed?> then // allows player to move up
         change y by (10)
     end
@@ -64,7 +64,7 @@ repeat until <(lives) = (0)>
     if <key (left arrow v) pressed?> then // allows player to move left
         change x by (-10)
     end
-end
++end
 ```
 
 

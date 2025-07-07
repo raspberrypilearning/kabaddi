@@ -46,7 +46,7 @@ end
 
 --- task ---
 
-On the **Stage**, add this `broadcast`{:class='block3events'} to your start script, to make sure our Kabaddi timer starts counting when the game starts:
+On the **Stage**, add this `broadcast`{:class='block3events'} to your start script, to make sure the Kabaddi timer starts counting when the game starts:
 
 ![Stage with a centred vertical green line.](images/stage.png)
 
