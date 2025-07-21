@@ -32,7 +32,6 @@ repeat until <(lives) = (0)>
     if <key (left arrow v) pressed?> then 
         change x by (-10)
     end
-    end
     if <touching (Opponent v)?> then
         broadcast [tag opponent v]
     end
