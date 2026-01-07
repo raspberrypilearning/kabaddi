@@ -1,18 +1,18 @@
-## Make the Kabaddi timer
+## Make the kabaddi timer
 
-In the rules of Kabaddi, the player has to keep repeating the word 'Kabaddi' over and over to show they aren't taking another breath. We're going to simulate that by needing the player to press space every second, or lose a life. 
+In kabaddi, the player has to keep repeating the word 'kabaddi' to show that they are not taking another breath. To simulate that, the player will need to press the space bar at least every second, or they will lose a life. 
 
 --- task ---
 
-Create a new `variable`{:class='block3variables'} called `kabaddi`. We will use this as a timer to make sure the player presses the 'kabaddi' button (space bar) every so often, just like having to say 'Kabaddi!' while you play.
+Create a new `variable`{:class='block3variables'} called `kabaddi`. You will use this as a timer to make sure the player presses the 'kabaddi' button (the space bar) regularly, just like having to repeat "Kabaddi!" while you play.
 
 --- /task ---
 
 --- task ---
 
-Add this code to the player, to simulate saying 'kabaddi' by pressing `space`:
+Add this code to the **Player** sprite, to simulate saying "Kabaddi!" by pressing <kbd>Space<kbd>:
 
-![Sprite of a person walking, labelled “player”.](images/avery.png)
+![The Player sprite.](images/avery.png)
 
 ```blocks3
 when I receive [start v]
@@ -45,9 +45,9 @@ end
 
 --- task ---
 
-On the **Stage**, add this `broadcast`{:class='block3events'} to your start script, to make sure the Kabaddi timer starts counting when the game starts:
+On the **Stage**, add a new `broadcast`{:class='block3events'} with the message `kabbadi` to your 'start' script, so that the kabaddi timer (which you will set up next) starts running when the game starts:
 
-![Stage with a centred vertical green line.](images/stage.png)
+![The Stage with a vertical green line across the centre.](images/stage.png)
 
 ```blocks3
 when green flag clicked
@@ -79,7 +79,7 @@ end
 
 Add this new code to the **Stage**, to make a one-second timer that keeps track of the player 'saying kabaddi':
 
-![Stage with a centred vertical green line.](images/stage.png)
+![The Stage with a vertical green line across the centre.](images/stage.png)
 
 ```blocks3
 when I receive (kabaddi v)
@@ -92,13 +92,13 @@ broadcast (tag player v)
 broadcast (kabaddi v)
 ```
 
-Players must press space regularly (every second) to reset their timer, or they'll get 'tagged' and lose a life. The timer then starts itself again with the `broadcast`{:class='block3events'}.
+Players must press the space bar regularly (at least every second) to reset their timer, or they will be 'tagged' and lose a life. The timer will then start again when the `broadcast`{:class='block3events'} is sent.
 
 --- /task ---
 
 --- task ---
 
-**Test your code.** Click the green flag, and make sure the Kabaddi timer is working, and resets when you press the space bar.
+**Test your code.** Click on the green flag and make sure that the kabaddi timer works and that it resets when you press the space bar.
 
 --- /task ---
 

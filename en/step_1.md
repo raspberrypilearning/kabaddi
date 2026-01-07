@@ -1,16 +1,16 @@
 ## What you will make
 
-Make a tag-style game inspired by [kabaddi](https://en.wikipedia.org/wiki/Kabaddi), where the player must cross a line, tag opponents, and return safely while managing a countdown timer by pressing the spacebar! 
+Make a game inspired by [kabaddi](https://en.wikipedia.org/wiki/Kabaddi), where the player must cross a line, tag opponents, and avoid being caught, while managing a countdown timer by repeatedly pressing the space bar.
 
 ### Rules:
-- Use the arrow keys to tag opponents
-- You can only touch one opponent at a time, or you will lose a life
-- Opponents will chase you, but cannot cross the green line
-- You must press the space bar **at least once every second**, or you will lose a life
+- Use the arrow keys to tag opponents.
+- Opponents will chase you, but cannot cross the green line.
+- You can only touch one opponent at a time. If you touch more than one opponent at a time, they have caught you and you will lose a life.
+- You must press the space bar **at least once every second** or you will lose a life.
 
 
 --- print-only ---
-![](images/kabaddi.png)
+![The finished game.](images/kabaddi.png)
 --- /print-only ---
 
 --- no-print ---

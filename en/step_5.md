@@ -6,15 +6,15 @@ Make the tagging and scoring work.
 
 --- task ---
 
-Create a new `broadcast`{:class='block3events'} which says `tag opponent`. This will be used to keep track of how many opponents you catch.
+Create a new `broadcast`{:class='block3events'} with the message `tag opponent`. This will be used to keep track of how many opponents the player tags.
 
 --- /task ---
 
 --- task ---
 
-Add this code to the **Player** sprite, so it registers if the player tags an opponent:
+Add this code to the **Player** sprite, so that it identifies when the player tags an opponent:
 
-![Sprite of a person walking, labelled “player”.](images/avery.png)
+![The Player sprite.](images/avery.png)
 
 ```blocks3
 when I receive [start v]
@@ -44,13 +44,13 @@ end
 
 --- task ---
 
-On the **Opponent** sprite, add this new code to remove opponents who get tagged:
+On the **Opponent** sprite, add this new code to remove opponents who are tagged:
 
-![Sprite of a person in a wheelchair, labelled “opponent”](images/opponent.png)
+![The Opponent sprite.](images/opponent.png)
 
 ```blocks3
 when I receive (tag opponent v)
-if <touching (player v)> then
+if <touching (Player v)> then
     delete this clone
 end
 ```
@@ -59,9 +59,9 @@ end
 
 --- task ---
 
-The Stage handles the scoring in our game. Add these blocks to the **Stage**:
+The Stage will handle the scoring in the game. Add these blocks to the **Stage**:
 
-![Stage with a centred vertical green line.](images/stage.png)
+![The Stage with a vertical green line across the centre.](images/stage.png)
 
 ```blocks3
 when I receive (tag opponent v)
@@ -72,13 +72,13 @@ change [opponent tagged v] by (1)
 
 --- task ---
 
-**Test your code.** Click the green flag, and make sure the opponent tagging is working, the score changes and the clone disappears when touched.
+**Test your code.** Click on the green flag and make sure the opponent tagging works: the score should change and each clone should disappear when touched by the player.
 
 --- /task ---
 
-### Being tagged
+### Being caught
 
-The rules of Kabaddi say that the player must tag opponents, but not get caught themselves. In this game, if more than one opponent is touching the player, they get caught. We need to make a way of telling if more than one opponent is touching the player.
+In kabaddi, the player must tag opponents, but not get caught themselves. In this game, if more than one opponent is touching the player, the player has been caught. You need to make a way to identify if more than one opponent is touching the player.
 
 --- task ---
 
@@ -88,9 +88,9 @@ On the **Stage**, make a new `variable`{:class='block3variables'} called `touchi
 
 --- task ---
 
-Add this code to the **Opponent** sprite, so the game is checking if more than one opponent is touching the player:
+Add this code to the **Opponent** sprite, so that the game checks if more than one opponent is touching the player:
 
-![Sprite of a person in a wheelchair, labelled “opponent”](images/opponent.png)
+![The Opponent sprite.](images/opponent.png)
 
 ```blocks3
 when I start as a clone
@@ -107,15 +107,15 @@ end
 
 --- task ---
 
-Create a new `broadcast`{:class='block3events'} called `tag player`.
+Create a new `broadcast`{:class='block3events'} with the message `tag player`.
 
 --- /task ---
 
 --- task ---
 
-Add this code to the start script on the **Stage**, to make sure the `touching`{:class='block3variables'}variable is `0` when the game starts, and that if more than one opponent is touching the player (`touching > 1`) then they get 'tagged' and lose a life.
+Add this code to the 'start' script on the **Stage**, to make sure that the `touching`{:class='block3variables'} variable is set to `0` when the game starts, and that the game identifies when more than one opponent is touching the player (`touching`{:class='block3variables'} `>`{:class='block3operators'} `1`).
 
-![Stage with a centred vertical green line.](images/stage.png)
+![The Stage with a vertical green line across the centre.](images/stage.png)
 
 ```blocks3
 when green flag clicked
@@ -142,13 +142,13 @@ end
 
 --- /task ---
 
-Now, if more than one opponent touches the player, they need to lose a life and go back across the line.
+If more than one opponent touches the player, the player has been 'tagged' and needs to lose a life and go back across the green line.
 
 --- task ---
 
-Add this code to the **Player** now, so it can react properly if tagged:
+Add this code to the **Player** sprite, so that the player moves back to the starting position and loses a life if they are tagged:
 
-![Sprite of a person walking, labelled “player”.](images/avery.png)
+![The Player sprite.](images/avery.png)
 
 ```blocks3
 when I receive (tag player v)
@@ -160,11 +160,11 @@ change [lives v] by (-1)
 
 --- task ---
 
-**Test your code.** Click the green flag, and make sure the lives counter is working, and the player resets when you get tagged by more than one opponent.
+**Test your code.** Click on the green flag and make sure that the lives counter works and the player moves back across the green line when they are caught by more than one opponent.
 
 --- /task ---
 
-In the next step, make the player 'say kabaddi' using a key press!
+In the next step, you will make the player 'say kabaddi' using a key press.
 
 --- save ---
 

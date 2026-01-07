@@ -1,34 +1,34 @@
-## Stage Setup
+## Set up the Stage
 
-Set up the game by drawing the green line and making all the variables you will need.
+To set up the game, you will draw the green line and make all the variables you will need.
 
 --- task ---
 
-Paint the “green line”. This sets a safe zone for the player.
+First, paint the green line. This will set a safe zone for the player.
 
-![](images/backdrop_menu_paint.png)
+![The 'Paint' option highlighted in the 'Choose a Backdrop' menu.](images/backdrop_menu_paint.png)
 
-In the **Backdrops** editor, draw a vertical green line at somewhere around x = –100 (a bit to the left of the middle). It should be 20 pixels thick.
+In the **Backdrops** editor, draw a vertical green line across the canvas at around x = –100 (between the left edge and the centre). The line should have a thickness of 20 pixels.
 
-![ Editor showing a green vertical line drawn as a backdrop.](images/backdrop_editor.png)
+![The Backdrops editor with a green vertical line drawn across the canvas on the left-hand side.](images/backdrop_editor.png)
 
 --- /task ---
 
 --- task ---
 
-Create two variables: `lives`{:class='block3variables'} and `opponent tagged`{:class='block3variables'}
+Create two variables, `lives`{:class='block3variables'} and `opponent tagged`{:class='block3variables'}.
 
-![Variable list showing “lives” and “opponent tagged” both ticked.](images/variables.png)
+![The 'Variables' blocks menu with 'lives' and 'opponent tagged' ticked.](images/variables.png)
 
-These variables will control scoring, and tell the game if the player has won or lost.
+These variables will control scoring, and they will be used to identify when the player has won or lost.
 
 --- /task ---
 
 --- task ---
 
-Write the game “Start” script:
+Write the game 'start' script:
 
-![Stage with a centred vertical green line.](images/stage.png)
+![The Stage with a vertical green line across the centre.](images/stage.png)
 
 ```blocks3
 when green flag clicked
@@ -40,7 +40,7 @@ set [opponent tagged v] to (0)
 
 --- task ---
 
-Create a new `broadcast`{:class='block3events'} called `start`, and add the broadcast block to the bottom of your script:
+Create a new `broadcast`{:class='block3events'} with the message `start`, and add the `broadcast`{:class='block3events'} block to the bottom of your script:
 
 ```blocks3
 when green flag clicked
@@ -49,15 +49,15 @@ set [opponent tagged v] to (0)
 +broadcast (start v)
 ```
 
-This is the message we will use to start all the other sprites in the game.
+This is the message that you will use to start all the sprites in the game.
 
 --- /task ---
 
-Add the counters for both `lives`{:class='block3variables'} and `opponent tagged`{:class='block3variables'}, as these are the two variables that control winning and losing the game.
+Next, add the counters for both `lives`{:class='block3variables'} and `opponent tagged`{:class='block3variables'}, to control winning and losing the game.
 
 --- task ---
 
-Create two new `broadcast`{:class='block3events'} messages called `win` and `lose`.
+Create two new `broadcast`{:class='block3events'} messages, `win` and `lose`.
 
 --- /task ---
 
@@ -65,7 +65,7 @@ Create two new `broadcast`{:class='block3events'} messages called `win` and `los
 
 Add this code to the bottom of your script:
 
-![Stage with a centred vertical green line.](images/stage.png)
+![The Stage with a vertical green line across the centre.](images/stage.png)
 
 ```blocks3
 when green flag clicked
@@ -73,7 +73,7 @@ set [lives v] to (5)
 set [opponent tagged v] to (0)
 broadcast (start v)
 +forever
-if <(opponent tagged) = (7)> then // Tagging 7 opponents means you win.
+if <(opponent tagged) = (7)> then // Tagging 7 opponents means the player wins
     broadcast (win v)
     wait (3) seconds
 end
@@ -84,11 +84,11 @@ end
 
 --- task ---
 
-Add the code for running out of lives. 
+Add the code for running out of lives:
 
 ```blocks3
 when green flag clicked
-set [lives v] to (5) // The player has 5 lives to start
+set [lives v] to (5) // The player has 5 lives at the start
 set [opponent tagged v] to (0)
 broadcast (start v)
 forever
@@ -105,6 +105,6 @@ end
 
 --- /task ---
 
-In the next step, make the controls for your player!
+In the next step, you will make the controls for the player.
 
 --- save ---
