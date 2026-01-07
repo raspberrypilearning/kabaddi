@@ -64,7 +64,7 @@ delete this clone
 
 --- task ---
 
-Now, add this new code **inside** your `repeat until`{:class="block3control"}`lives`{:class="block3variables"}`=`{:class="block3operators"}`0` loop, so that if the opponents touch the green line, they are moved away:
+Now, add this new code **inside** your `repeat until`{:class="block3control"} `lives`{:class="block3variables"} `=`{:class="block3operators"} `0` loop, so that if the opponents touch the green line, they are moved away:
 
 ```blocks3
 when I start as a clone
