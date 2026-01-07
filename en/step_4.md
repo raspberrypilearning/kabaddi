@@ -72,11 +72,11 @@ switch costume to (pick random (1) to (13))
 go to x:(pick random (-100) to (240)) y:(pick random (-180) to (180))
 show
 repeat until <(lives) = (0)>
-    point towards (Player v) // Each clone will chase the player.
+    point towards (Player v) // Each clone will chase the player
     turn right (pick random (-70) to (70)) degrees
     move (2) steps
     if on edge, bounce
-    +if <touching color ( #00ff00)?> then
++   if <touching color ( #00ff00)?> then
 	change x by (100)
 	change y by (pick random (-180) to (180)
     end
