@@ -1,20 +1,20 @@
 title: Kabaddi!
 hero_image: images/banner.png
-description: Make a tag-style game inspired by kabaddi, where the player must cross a line, tag opponents, and return safely while managing a countdown timer by pressing the spacebar to "breathe"! 
+description: Make a game inspired by kabaddi, where the player must tag opponents and avoid being caught, while managing a countdown timer
 version: 1
 listed: false
 copyedit: false
 last_tested: "2025-01-01"
 steps:
   - title: What you will make
-  - title: Stage setup
+  - title: Set up the Stage
     completion: engaged
-  - title: Player setup and controls
+  - title: Set up the player and controls
   - title: Add opponents
   - title: Tagging and being caught
     completion: internal
-  - title: Make the Kabaddi timer
-  - title: Challenge!
+  - title: Make the kabaddi timer
+  - title: Challenge
     challenge: true
-  - title: What can you do now?
+  - title: What next?
     completion: external

@@ -1,33 +1,33 @@
 ## Challenge
 
-Upgrade your project and make it extra cool!
+Make your project even better!
 
 --- task ---
 
-Add effect `sounds`{:class='block3sounds'} for:
- - winning 
- - losing
- - saying 'Kabaddi!' when space is pressed (you could record yourself saying it!)
- - tagging an opponent
- - being tagged
- - game start
+Add effect `Sounds`{:class='block3sound'} for:
+ - Winning
+ - Losing
+ - Saying "Kabaddi!" when the space bar is pressed (for example, you could record yourself saying it!)
+ - Tagging an opponent
+ - The player being tagged
+ - The game starting
 
 --- /task ---
 
 --- task ---
 
-Add a restart loop, so the game restarts after a certain amount of time and the player doesn't have to click the green flag.
+Add a restart loop, so that the game restarts after a certain amount of time and the player does not need to click on the green flag again.
 
 --- /task ---
 
 --- task ---
 
-Add `looks`{:class='block3looks'} blocks to create a walking animation for the player sprite.
+Add `Looks`{:class='block3looks'} blocks to create a walking animation for the **Player** sprite.
 
 --- /task ---
 
 --- task ---
 
-Create a game 'difficulty level' by allowing the user to change how fast the clones move.
+Allow the user to change how fast the clones move to create a game 'difficulty level'.
 
 --- /task ---

@@ -1,3 +1,3 @@
-## What can you do now?
+## What next?
 
 Try another [Scratch](https://projects.raspberrypi.org/en/projects?software%5B%5D=scratch){:target="_blank"} project!
