@@ -2,8 +2,8 @@ title: Kabaddi!
 hero_image: images/banner.png
 description: Make a game inspired by kabaddi, where the player must tag opponents and avoid being caught, while managing a countdown timer
 version: 1
-listed: false
-copyedit: false
+listed: true
+copyedit: true
 last_tested: "2025-01-01"
 steps:
   - title: What you will make
