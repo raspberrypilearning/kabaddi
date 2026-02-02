@@ -10,7 +10,9 @@ Make a game inspired by [kabaddi](https://en.wikipedia.org/wiki/Kabaddi), where 
 
 
 --- print-only ---
+
 ![The finished game.](images/kabaddi.png)
+
 --- /print-only ---
 
 --- no-print ---
