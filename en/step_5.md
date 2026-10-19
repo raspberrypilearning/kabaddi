@@ -88,14 +88,31 @@ On the **Stage**, make a new `variable`{:class='block3variables'} called `touchi
 
 --- task ---
 
-Create a new `broadcast`{:class='block3events'} message called `count opponents`. On the **Opponent** sprite, add a receiver that adds `1` to `touching`{:class='block3variables'} if it is touching the player.
+On the **Opponent** sprite, make a variable called `touching player`{:class='block3variables'} and choose **For this sprite only**. Untick its checkbox. Each clone needs its own copy so it can remember whether it was touching the player when counted.
+
+Create a new `broadcast`{:class='block3events'} message called `count opponents`. Add a receiver that resets the clone's `touching player`{:class='block3variables'} flag to `0`. If the clone is touching the player, set its flag to `1` and add `1` to the shared `touching`{:class='block3variables'} count.
 
 ![The Opponent sprite.](images/opponent.png)
 
 ```blocks3
 when I receive (count opponents v)
+set [touching player v] to (0)
 if <touching (Player v)?> then
+    set [touching player v] to (1)
     change [touching v] by (1)
+end
+```
+
+--- /task ---
+
+--- task ---
+
+Update the **Opponent** sprite's earlier `tag opponent`{:class='block3events'} receiver to check its saved flag instead of checking contact again. This makes it delete the same clone that was counted, even if an opponent moves before the message arrives.
+
+```blocks3
+when I receive (tag opponent v)
+if <(touching player) = (1)> then
+    delete this clone
 end
 ```
 
