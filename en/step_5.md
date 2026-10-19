@@ -88,18 +88,14 @@ On the **Stage**, make a new `variable`{:class='block3variables'} called `touchi
 
 --- task ---
 
-Add this code to the **Opponent** sprite, so that the game checks if more than one opponent is touching the player:
+Create a new `broadcast`{:class='block3events'} message called `count opponents`. On the **Opponent** sprite, add a receiver that adds `1` to `touching`{:class='block3variables'} if it is touching the player.
 
 ![The Opponent sprite.](images/opponent.png)
 
 ```blocks3
-when I start as a clone
-repeat until <(lives) = (0)>
-    if <touching (Player v)?> then
-        change [touching v] by (1)
-        wait until <not <touching (Player v)?>>
-        change [touching v] by (-1)
-    end
+when I receive (count opponents v)
+if <touching (Player v)?> then
+    change [touching v] by (1)
 end
 ```
 
@@ -113,7 +109,7 @@ Create a new `broadcast`{:class='block3events'} with the message `tag player`.
 
 --- task ---
 
-Add this code to the 'start' script on the **Stage**, to make sure that the `touching`{:class='block3variables'} variable is set to `0` when the game starts, and that the game identifies when more than one opponent is touching the player (`touching`{:class='block3variables'} `>`{:class='block3operators'} `1`).
+On the **Stage**, set `touching`{:class='block3variables'} to `0` before broadcasting `start`{:class='block3events'}:
 
 ![The Stage with a vertical green line across the centre.](images/stage.png)
 
@@ -132,11 +128,28 @@ forever
         broadcast (lose v)
         wait (3) seconds
     end
-+    if <(touching) > (1)> then
-        broadcast (tag player v)
-        set [touching v] to (0)
-        wait (1) seconds
-+    end
+end
+```
+
+--- /task ---
+
+Count the opponents before deciding who has been tagged. Each count starts at zero, so deleting a tagged clone cannot leave an old contact in the total.
+
+--- task ---
+
+On the **Player** sprite, replace the `if touching Opponent`{:class='block3control'} section inside the movement loop with these blocks. Leave the arrow-key checks above them.
+
+Use `broadcast and wait`{:class='block3events'} so every opponent finishes counting before the player checks the total. If more than one opponent touches the player, the player is caught. If exactly one touches, that opponent is tagged.
+
+```blocks3
+set [touching v] to (0)
+broadcast (count opponents v) and wait
+if <(touching) > (1)> then
+    broadcast (tag player v) and wait
+else
+    if <(touching) = (1)> then
+        broadcast (tag opponent v) and wait
+    end
 end
 ```
 
@@ -160,7 +173,7 @@ change [lives v] by (-1)
 
 --- task ---
 
-**Test your code.** Click on the green flag and make sure that the lives counter works and the player moves back across the green line when they are caught by more than one opponent.
+**Test your code.** Click on the green flag and tag one opponent, then approach two opponents together. One opponent should disappear and add one point; two opponents should cost one life and send the player back across the green line. Repeat this after several successful tags to check that old contacts are not counted.
 
 --- /task ---
 
