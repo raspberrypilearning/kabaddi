@@ -32,8 +32,14 @@ repeat until <(lives) = (0)>
     if <key (left arrow v) pressed?> then 
         change x by (-10)
     end
-    if <touching (Opponent v)?> then
-        broadcast [tag opponent v]
+    set [touching v] to (0)
+    broadcast (count opponents v) and wait
+    if <(touching) > (1)> then
+        broadcast (tag player v) and wait
+    else
+        if <(touching) = (1)> then
+            broadcast (tag opponent v) and wait
+        end
     end
 +    if <key (space v) pressed?> then
         set [kabaddi v] to (1)
@@ -64,11 +70,6 @@ forever
     if <(lives) = (0)> then
         broadcast (lose v)
         wait (3) seconds
-    end
-    if <(touching) > (1)> then
-        broadcast (tag player v)
-        set [touching v] to (0)
-        wait (1) seconds
     end
 end
 ```
@@ -101,6 +102,3 @@ Players must press the space bar regularly (at least every second) to reset thei
 **Test your code.** Click on the green flag and make sure that the kabaddi timer works and that it resets when you press the space bar.
 
 --- /task ---
-
-```
-```
